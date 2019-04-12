@@ -76,7 +76,7 @@ class ThisIsLiterallyJustAPointerToTest
         return *ptr;
     }
 
-    operator Test*() const
+    operator bool() const
     {
         return ptr;
     }
@@ -86,14 +86,14 @@ class ThisIsLiterallyJustAPointerToTest
     Test *ptr;
 };
 
-ThisIsLiterallyJustAPointerToTest operator+(int offset, const ThisIsLiterallyJustAPointerToTest& ptr)
+ThisIsLiterallyJustAPointerToTest operator+(int offset, const ThisIsLiterallyJustAPointerToTest& rhs)
 {
-    return ptr + offset;
+    return rhs + offset;
 }
 
-ThisIsLiterallyJustAPointerToTest operator-(int offset, const ThisIsLiterallyJustAPointerToTest& ptr)
+ThisIsLiterallyJustAPointerToTest operator-(int offset, const ThisIsLiterallyJustAPointerToTest& rhs)
 {
-    return ptr - offset;
+    return rhs - offset;
 }
 
 int main()
